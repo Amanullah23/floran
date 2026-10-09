@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 const stats = [
@@ -10,17 +10,17 @@ const stats = [
   { value: "<24h", label: "Avg. response time" },
 ];
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] },
+    transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] as const },
   },
 };
 
