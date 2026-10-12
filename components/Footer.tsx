@@ -16,6 +16,8 @@ const columns = [
       { href: "/team", label: "Team" },
       { href: "/work", label: "Work" },
       { href: "/contact", label: "Contact" },
+      { href: "/blog", label: "Blog" },
+      { href: "/careers", label: "Careers" },
     ],
   },
   {

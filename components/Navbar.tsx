@@ -9,11 +9,13 @@ import Image from "next/image";
 import GlowCTAButton from "@/components/GlowCTAButton";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  //{ href: "/", label: "Home" },
+  { href: "/about", label: "Why Floran" },
   { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
   { href: "/team", label: "Team" },
+  { href: "/blog", label: "Blog" },
+  { href: "/careers", label: "Careers" },
 ];
 
 export default function Navbar() {
