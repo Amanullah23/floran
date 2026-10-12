@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon, XIcon } from "@/components/icons";
@@ -47,11 +48,15 @@ export default function Footer() {
       >
         <div className="flex flex-col justify-between gap-12 md:flex-row">
           <div className="max-w-xs">
-            <Link
-              href="/"
-              className="font-display text-xl font-bold tracking-wide text-maroon"
-            >
-              FLORAN
+            <Link href="/" className="inline-block">
+              <Image
+                src="/floran-logo.png"
+                alt="Floran"
+                width={1666}
+                height={904}
+                priority
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-ink/60">
               A software studio building web, mobile, and AI-powered products

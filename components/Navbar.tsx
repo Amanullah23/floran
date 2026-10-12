@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X, MessageCircle } from "lucide-react";
+import Image from "next/image";
+import GlowCTAButton from "@/components/GlowCTAButton";
 
 const links = [
   { href: "/", label: "Home" },
@@ -56,9 +58,14 @@ export default function Navbar() {
           }`}
         >
           <Link href="/" className="flex shrink-0 items-center gap-2">
-            <span className="font-display text-lg font-bold tracking-wide text-maroon">
-              FLORAN
-            </span>
+            <Image
+              src="/floran-logo.png"
+              alt="Floran"
+              width={1666}
+              height={904}
+              priority
+              className="h-12 w-auto md:h-10"
+            />
             <span className="relative hidden h-2 w-2 md:inline-flex">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green/60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-green" />
@@ -100,16 +107,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.96 }}
             className="hidden md:block"
           >
-            <Link
-              href="/contact"
-              className="group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-sm font-medium text-cream transition-colors duration-300 hover:bg-maroon"
-            >
-              Let&apos;s talk
-              <MessageCircle
-                size={15}
-                className="transition-transform duration-200 group-hover:scale-110"
-              />
-            </Link>
+            <GlowCTAButton />
           </motion.div>
 
           <button
