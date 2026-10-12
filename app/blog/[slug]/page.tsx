@@ -1,8 +1,7 @@
 "use client";
 
-import { use } from "react";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { useParams, notFound } from "next/navigation";
 import { motion, type Variants } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import { posts } from "@/lib/posts";
@@ -28,15 +27,14 @@ const accentText: Record<string, string> = {
   gold: "text-gold",
 };
 
-export default function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = use(params);
+export default function BlogPostPage() {
+  const params = useParams<{ slug: string }>();
+  const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
   const post = posts.find((p) => p.slug === slug);
 
-  if (!post) notFound();
+  if (!post) {
+    notFound();
+  }
 
   const related = posts.filter((p) => p.id !== post.id).slice(0, 2);
 
